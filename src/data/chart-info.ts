@@ -6,14 +6,33 @@ export const CHART_INFO: ICategory[] = [
       {
         id: 1,
         name: "Apple",
-        brand: 1,
+        sales: [
+          {
+            brandId: 1,
+            quantity: [100, 130, 210, 80],
+          },
+          {
+            brandId: 2,
+            quantity: [200, 260, 310, 120],
+          },
+        ],
       },
       {
         id: 2,
         name: "Banana",
-        brand: 2,
+        sales: [
+          {
+            brandId: 1,
+            quantity: [150, 112, 26, 95],
+          },
+          {
+            brandId: 2,
+            quantity: [250, 420, 50, 0],
+          },
+        ],
       },
     ],
+
     brands: [
       {
         id: 1,
@@ -33,12 +52,30 @@ export const CHART_INFO: ICategory[] = [
       {
         id: 3,
         name: "Carrot",
-        brand: 3,
+        sales: [
+          {
+            brandId: 3,
+            quantity: [70, 80, 90, 100],
+          },
+          {
+            brandId: 4,
+            quantity: [120, 130, 140, 150],
+          },
+        ],
       },
       {
         id: 4,
         name: "Potato",
-        brand: 3,
+        sales: [
+          {
+            brandId: 3,
+            quantity: [170, 180, 190, 200],
+          },
+          {
+            brandId: 4,
+            quantity: [130, 140, 150, 160],
+          },
+        ],
       },
     ],
     brands: [
@@ -57,7 +94,10 @@ export const CHART_INFO: ICategory[] = [
 export interface IProduct {
   id: number;
   name: string;
-  brand: number;
+  sales: {
+    brandId: number;
+    quantity: number[];
+  }[];
 }
 
 export interface ICategory {
